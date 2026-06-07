@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060d1f"/>
+      <stop offset="100%" stop-color="#0a0f1e"/>
+    </linearGradient>
+    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#5b21b6"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="shield-shine" x1="0%" y1="0%" x2="40%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="45%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="outer-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shield-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft-glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="circle-clip">
+      <circle cx="200" cy="200" r="192"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="196" fill="#0d1117" stroke="#1c2333" stroke-width="2"/>
+  <circle cx="200" cy="200" r="192" fill="url(#bg-grad)"/>
+
+  <!-- Subtle grid overlay -->
+  <g clip-path="url(#circle-clip)" opacity="0.06">
+    <line x1="0" y1="80"  x2="400" y2="80"  stroke="#60a5fa" stroke-width="0.5"/>
+    <line x1="0" y1="160" x2="400" y2="160" stroke="#60a5fa" stroke-width="0.5"/>
+    <line x1="0" y1="240" x2="400" y2="240" stroke="#60a5fa" stroke-width="0.5"/>
+    <line x1="0" y1="320" x2="400" y2="320" stroke="#60a5fa" stroke-width="0.5"/>
+    <line x1="80"  y1="0" x2="80"  y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+    <line x1="160" y1="0" x2="160" y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+    <line x1="240" y1="0" x2="240" y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+    <line x1="320" y1="0" x2="320" y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+  </g>
+
+  <!-- Outer decorative ring -->
+  <circle cx="200" cy="200" r="172" fill="none" stroke="url(#ring-grad)" stroke-width="1" stroke-dasharray="6 9"/>
+
+  <!-- Shield glow halo -->
+  <ellipse cx="200" cy="175" rx="90" ry="95" fill="#4f46e5" opacity="0.12" filter="url(#outer-glow)"/>
+
+  <!-- Main shield body -->
+  <path d="M200 72 L294 108 L294 188 Q294 258 200 295 Q106 258 106 188 L106 108 Z"
+        fill="url(#shield-grad)" filter="url(#shield-glow)"/>
+
+  <!-- Shield shine highlight -->
+  <path d="M200 72 L294 108 L294 188 Q294 258 200 295 Q106 258 106 188 L106 108 Z"
+        fill="url(#shield-shine)"/>
+
+  <!-- Shield border -->
+  <path d="M200 72 L294 108 L294 188 Q294 258 200 295 Q106 258 106 188 L106 108 Z"
+        fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+
+  <!-- Airplane icon (top-down view, white, centered) -->
+  <g transform="translate(200,178) scale(1.15)" filter="url(#soft-glow)">
+    <!-- Fuselage -->
+    <ellipse cx="0" cy="0" rx="7" ry="28" fill="white" opacity="0.95"/>
+    <!-- Wings -->
+    <path d="M-7,-4 L-36,10 L-36,16 L-7,8 Z" fill="white" opacity="0.95"/>
+    <path d="M7,-4 L36,10 L36,16 L7,8 Z" fill="white" opacity="0.95"/>
+    <!-- Tail fins -->
+    <path d="M-7,20 L-20,30 L-20,34 L-7,27 Z" fill="white" opacity="0.95"/>
+    <path d="M7,20 L20,30 L20,34 L7,27 Z" fill="white" opacity="0.95"/>
+    <!-- Nose tip glow -->
+    <ellipse cx="0" cy="-25" rx="4" ry="4" fill="#93c5fd" opacity="0.9"/>
+  </g>
+
+  <!-- Zero-Knowledge badge (bottom-right of shield) -->
+  <circle cx="268" cy="252" r="26" fill="#0d1117" stroke="#1c2333" stroke-width="2"/>
+  <circle cx="268" cy="252" r="22" fill="#10b981"/>
+  <!-- Checkmark -->
+  <path d="M257 252 L264 259 L280 243" stroke="white" stroke-width="3.5"
+        fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- "ZK" small label next to badge -->
+  <text x="268" y="292" text-anchor="middle" font-family="'Courier New',monospace"
+        font-size="9" font-weight="700" fill="#10b981" letter-spacing="1">ZK</text>
+
+  <!-- Wordmark: AegisTrips -->
+  <text x="200" y="345" text-anchor="middle"
+        font-family="'Arial Black','Arial',sans-serif"
+        font-size="36" font-weight="900" fill="url(#text-grad)" letter-spacing="-1">
+    AegisTrips
+  </text>
+
+  <!-- Tagline -->
+  <text x="200" y="367" text-anchor="middle"
+        font-family="Arial,sans-serif"
+        font-size="10" font-weight="500" fill="#4b5563" letter-spacing="3.5">
+    ZERO-KNOWLEDGE TRAVEL
+  </text>
+
+  <!-- T3N badge bottom -->
+  <rect x="155" y="378" width="90" height="16" rx="8"
+        fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+  <text x="200" y="390" text-anchor="middle"
+        font-family="Arial,sans-serif"
+        font-size="8.5" font-weight="700" fill="#a78bfa" letter-spacing="2">
+    ⬡ TERMINAL 3
+  </text>
+</svg>

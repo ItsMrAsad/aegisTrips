@@ -45,17 +45,11 @@ function Header() {
 
       {/* Logo */}
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <div
-          style={{
-            width: 34, height: 34, borderRadius: 9,
-            background: "linear-gradient(135deg, #1d4ed8 0%, #6d28d9 100%)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 17, flexShrink: 0,
-            boxShadow: "0 0 16px rgba(109,40,217,0.35)",
-          }}
-        >
-          🛡️
-        </div>
+        <img
+          src="/logo.svg"
+          alt="AegisTrips"
+          style={{ width: 36, height: 36, borderRadius: 9, flexShrink: 0 }}
+        />
         <div>
           <span
             style={{

@@ -223,16 +223,10 @@ function ThinkingBubble() {
 
 export function AgentAvatar() {
   return (
-    <div
-      style={{
-        width: 28, height: 28, borderRadius: 8, flexShrink: 0,
-        background: "linear-gradient(135deg, #1d4ed8, #6d28d9)",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: 13,
-        boxShadow: "0 0 10px rgba(109,40,217,0.3)",
-      }}
-    >
-      🛡️
-    </div>
+    <img
+      src="/logo.svg"
+      alt="AegisTrips"
+      style={{ width: 28, height: 28, borderRadius: 8, flexShrink: 0 }}
+    />
   );
 }
